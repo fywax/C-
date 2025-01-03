@@ -7,14 +7,15 @@ using namespace std;
 using namespace planning;
 #include "Classroom.h"
 #include "XmlFileSerializer.hpp"
+#include "XmlFileSerializerException.h"
 
 int  Menu();
 void Essai1();
-//void Essai2();
-//void Essai3();
-//void Essai4();
-//void Essai5();
-//void Essai6();
+void Essai2();
+void Essai3();
+void Essai4();
+void Essai5();
+void Essai6();
 
 int main(int argc,char* argv[])
 {
@@ -28,11 +29,11 @@ int main(int argc,char* argv[])
     switch(choix)
     {
       case 1 : Essai1(); break;
-      case 2 : //Essai2(); break;
-      case 3 : //Essai3(); break;
-      case 4 : //Essai4(); break;
-      case 5 : //Essai5(); break;
-      case 6 : //Essai6(); break;
+      case 2 : Essai2(); break;
+      case 3 : Essai3(); break;
+      case 4 : Essai4(); break;
+      case 5 : Essai5(); break;
+      case 6 : Essai6(); break;
       default : fini = true ; break;
     }
   }
@@ -88,7 +89,7 @@ void Essai1()
 }
 
 /*******************************************************************************************************/
-/*void Essai2()
+void Essai2()
 {
   cout << "----- 2. Test en lecture du template XmlFileSerializer avec des entiers ---------------------" << endl;
   cout << "----- 2.1 Test d'ouverture d'un fichier non existant ----------------------------------------" << endl;
@@ -148,7 +149,7 @@ void Essai1()
 }
 
 /*******************************************************************************************************/
-/*void Essai3()
+void Essai3()
 {
   cout << "----- 3. Test du template XmlFileSerializer avec des objets Time ----------------------------" << endl;
   cout << "----- 3.1 Creation du fichier ---------------------------------------------------------------" << endl;
@@ -200,7 +201,7 @@ void Essai1()
 }
 
 /*******************************************************************************************************/
-/*void Essai4()
+void Essai4()
 {
   cout << "----- 4. Test du template XmlFileSerializer avec des objets Timing --------------------------" << endl;
   cout << "----- 4.1 Creation du fichier ---------------------------------------------------------------" << endl;
@@ -259,7 +260,7 @@ void Essai1()
 }
 
 /*******************************************************************************************************/
-/*void Essai5()
+void Essai5()
 {
   cout << "----- 5. Test du template XmlFileSerializer avec des objets Event ---------------------------" << endl;
   cout << "----- 5.1 Creation du fichier ---------------------------------------------------------------" << endl;
@@ -329,7 +330,7 @@ void Essai1()
 }
 
 /*******************************************************************************************************/
-/*//void Essai6()
+void Essai6()
 {
   cout << "----- 6. Test du template XmlFileSerializer avec des objets Classroom -----------------------" << endl;
   cout << "----- 6.1 Creation du fichier ---------------------------------------------------------------" << endl;
@@ -385,5 +386,3 @@ void Essai1()
     delete fsr;
   }
 }
-
-*/

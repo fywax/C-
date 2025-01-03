@@ -37,6 +37,14 @@ Classroom& Classroom::operator=(const Classroom& egal)
     return *this;
 }
 
+bool Classroom::operator<(const Classroom& c) const 
+{
+    if(this->getId() < c.getId())
+        return true;
+
+    return false;
+}
+
 ostream& operator<<(ostream& sortie, const Classroom& c) 
 { 
     sortie << "<Classroom>" << endl;

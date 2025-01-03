@@ -1,35 +1,18 @@
-Test7: Time.o Timing.o Event.o Test7.o Professor.o Group.o Classroom.o schedulable.o Exception.o TimeException.o TimingException.o
-	g++ -o Test7 Time.o Timing.o Event.o Professor.o Group.o Classroom.o schedulable.o Exception.o TimeException.o TimingException.o Test7.o
-	
-Time.o: Time.cpp Time.h
-	g++ -c Time.cpp -o Time.o
+OBJ = Time.o Timing.o Event.o Professor.o Group.o Classroom.o schedulable.o Exception.o TimeException.o TimingException.o XmlFileSerializerException.o Test7.o
+TARGET = Test7
 
-Timing.o: Timing.cpp Timing.h
-	g++ -c Timing.cpp -o Timing.o
+# exec
+$(TARGET): $(OBJ)
+	g++ -o $(TARGET) $(OBJ)
 
-Event.o: Event.cpp Event.h
-	g++ -c Event.cpp -o Event.o
+# fichiers objets
+%.o: %.cpp %.h
+	g++ -c $< -o $@
 
-Professor.o: Professor.cpp Professor.h
-	g++ -c Professor.cpp -o Professor.o
+# Pour Test7.o car pas de h 
+$(TARGET).o: $(TARGET).cpp
+	g++ -c $(TARGET).cpp -o $(TARGET).o
 
-Group.o: Group.cpp Group.h
-	g++ -c Group.cpp -o Group.o
-
-Classroom.o: Classroom.cpp Classroom.h
-	g++ -c Classroom.cpp -o Classroom.o
-
-schedulable.o: schedulable.cpp schedulable.h
-	g++ -c schedulable.cpp -o schedulable.o
-
-Exception.o: Exception.cpp Exception.h
-	g++ -c Exception.cpp -o Exception.o
-
-TimeException.o: TimeException.cpp TimeException.h
-	g++ -c TimeException.cpp -o TimeException.o
-
-TimingException.o: TimingException.cpp TimingException.h
-	g++ -c TimingException.cpp -o TimingException.o
-
-Test7.o: Test7.cpp
-	g++ -c Test7.cpp -o Test7.o
+# Nettoyage
+clean:
+	rm -f $(OBJ) $(TARGET) core

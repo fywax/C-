@@ -1,18 +1,17 @@
 #include <iostream>
 #include <string>
 #include "Timing.h"
-using namespace std;
 
 namespace planning
 {
 
-    const string Timing::MONDAY = "Lundi";
-    const string Timing::TUESDAY = "Mardi";
-    const string Timing::WEDNESDAY = "Mercredi";
-    const string Timing::THURSDAY = "Jeudi";
-    const string Timing::FRIDAY = "Vendredi";
-    const string Timing::SATURDAY = "Samedi";
-    const string Timing::SUNDAY = "Dimanche";
+    const std::string Timing::MONDAY = "Lundi";
+    const std::string Timing::TUESDAY = "Mardi";
+    const std::string Timing::WEDNESDAY = "Mercredi";
+    const std::string Timing::THURSDAY = "Jeudi";
+    const std::string Timing::FRIDAY = "Vendredi";
+    const std::string Timing::SATURDAY = "Samedi";
+    const std::string Timing::SUNDAY = "Dimanche";
 
     Timing::Timing() {
         setDay("Lundi");
